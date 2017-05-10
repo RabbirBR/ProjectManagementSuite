@@ -33,7 +33,7 @@ const app = new Vue({
 		otherProjects:[],
 		projectData: [],
 		tasks: []
-
+		
 		/*tasks: [
 		{
 			name: "Main Task 1"
