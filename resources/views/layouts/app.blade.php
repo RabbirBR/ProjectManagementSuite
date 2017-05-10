@@ -18,6 +18,7 @@
     <script>
         window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?>
     </script>
+    <!-- Changing for Office Branch -->
 </head>
 <body>
     <div id="app">
