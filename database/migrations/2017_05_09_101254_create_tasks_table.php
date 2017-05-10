@@ -21,6 +21,7 @@ class CreateTasksTable extends Migration
             $table->string('name');
             $table->integer('estimated_hours')->nullable();
             $table->longText('description')->nullable();
+            $table->boolean('has_children')->default(0);
             $table->timestamps();
         });
     }

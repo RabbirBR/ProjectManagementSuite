@@ -30,12 +30,18 @@ class ProjectController extends Controller
     public function getIndividualProject($id){
         $projectData = [];
         $projectData['info'] =  Project::find($id);
-        $projectData['tasks'] =  getTasks($id, 0);
+        $projectData['tasks'] =  $this->getTasks($id, 0);
 
         return $projectData;
     }
 
-    protected function getTasks($project_id,$parent_id){
-        
+    private function getTasks($project_id,$parent_id){
+        $tasks = Task::where('project_id', $project_id)->where('parent_id', $parent_id)->get();
+
+        if(isset($tasks)){
+            foreach ($tasks as $i => $task) {
+                
+            }
+        }
     }
 }
