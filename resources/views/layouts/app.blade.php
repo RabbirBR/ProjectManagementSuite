@@ -18,7 +18,7 @@
     <script>
         window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?>
     </script>
-    <!-- Test for Office Branch Complete -->
+    <!-- Again for Office Branch -->
 </head>
 <body>
     <div id="app">
