@@ -29,11 +29,10 @@ Vue.component('task', require('./components/Task.vue'));
 const app = new Vue({
 	el: '#app',
 	data: {
-		myProjects:[],		
+		myProjects:[],
 		otherProjects:[],
 		projectData: [],
 		tasks: []
-		
 		/*tasks: [
 		{
 			name: "Main Task 1"
@@ -67,26 +66,42 @@ const app = new Vue({
 	methods: {
 		requestProject(project){
 			// console.log("From Root = "+project.id);
-			axios.get('/projects/getIndividualProject/'+project.id).then(response => {
-				this.projectData = response.data;
-				/*console.log(response.data);*/
+			var requestProjectConfig = {
+				onprogress: function(progressEvent) {
+					var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total);
+					console.log(percentCompleted);
+				},
+				onerror: function(event){
+					console.log(event);
+				},
+				ontimeout: function(event){
+					console.log(event);
+				}
+			};
+
+			var url = "/projects/getIndividualProject/"+project.id;
+
+			axios.get(url, requestProjectConfig).then(response => {
+				// this.projectData = response.data;
+				console.log(response);
+				console.log(requestProjectConfig);
 			});
 		},
 		addProject(project) {
-            // console.log(project);
-            // this.messages.push(message);
-            var config = {
+            /*console.log(project);
+            this.messages.push(message);*/
+            var addProjectConfig = {
             	onUploadProgress: function(progressEvent) {
             		var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total );
             		console.log(percentCompleted);
             	}
             };
 
-            axios.post('/projects/addProject', project, config)
+            axios.post('/projects/addProject', project, addProjectConfig)
             .then(response => {
             	/*console.log(response.data);*/
-            	this.myProjects = response.data;
-            	/*console.log(this.myProjects);*/
+            	/*this.myProjects = response.data;*/
+            	this.myProjects.push(response.data);            	
             });
         }
     },

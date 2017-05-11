@@ -169,7 +169,7 @@
     export default {
         props: ['tasks'],
         mounted() {
-            console.log('Project Detail Component mounted.');
+            /*console.log('Project Detail Component mounted.');*/
         }
     }
 </script>

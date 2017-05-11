@@ -19,9 +19,9 @@
     export default {
         props: ['task'],
         mounted() {
-            console.log('Task Component mounted.');
+            /*console.log('Task Component mounted.');
             console.log('With: ');
-            console.log(this.task);
+            console.log(this.task);*/
         },
         computed: {
             isFolder: function () {

@@ -9,7 +9,7 @@
         props: ['tasks'],
 
         mounted() {
-            console.log('Task List Component mounted.');
+            /*console.log('Task List Component mounted.');*/
         }
     }
 </script>

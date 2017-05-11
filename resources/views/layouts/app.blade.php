@@ -12,7 +12,11 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <!-- Font-Awesome -->
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Humane-js Notification CSS -->
+    <link href="/humane-js/theme/flatty.css" rel="stylesheet">
+
     @yield('customStyles')
     <!-- Scripts -->
     <script>
@@ -93,7 +97,8 @@
 
 <!-- Scripts -->
 <script src="/js/app.js"></script>
-
+<!-- Humane-js Notification JS -->
+<script src="/humane-js/humane.min.js"></script>
 
 @yield('scripts')
 </body>

@@ -14,8 +14,8 @@
 <script>
     export default {
         mounted() {
-            props: ['projects'],
-            console.log('Other Projects Component mounted.')
+            props: ['projects']
+            /*console.log('Other Projects Component mounted.');*/
         }
     }
 </script>

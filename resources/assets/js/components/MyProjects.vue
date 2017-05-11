@@ -29,7 +29,7 @@
         },
 
         mounted() {
-            console.log('My Projects Component mounted.');
+            // console.log('My Projects Component mounted.');
             // console.log('With: ');
             // console.log(this.projects);
         }

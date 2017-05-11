@@ -56,7 +56,7 @@
 <script>
 	export default {
 		mounted() {
-			console.log('Add Project Component mounted.');
+			/*console.log('Add Project Component mounted.');*/
 		},
 		methods:{
 			submitForm(e){

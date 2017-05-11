@@ -22,9 +22,9 @@ class ProjectController extends Controller
     public function addProject(Request $request){
     	$newProject = $request->all();
     	$user = Auth::user();
-    	$user->projects()->create($newProject);
-
-    	return User::find(Auth::user()->id)->projects()->get();
+    	$project = $user->projects()->create($newProject);
+        return $project;
+    	// return User::find(Auth::user()->id)->projects()->get();
     }
 
     public function getIndividualProject($id){

@@ -1136,7 +1136,6 @@ var app = new Vue({
 		otherProjects: [],
 		projectData: [],
 		tasks: []
-
 		/*tasks: [
   {
   	name: "Main Task 1"
@@ -1169,41 +1168,55 @@ var app = new Vue({
 	},
 	methods: {
 		requestProject: function requestProject(project) {
-			var _this = this;
-
 			// console.log("From Root = "+project.id);
-			axios.get('/projects/getIndividualProject/' + project.id).then(function (response) {
-				_this.projectData = response.data;
-				/*console.log(response.data);*/
+			var requestProjectConfig = {
+				onprogress: function onprogress(progressEvent) {
+					var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
+					console.log(percentCompleted);
+				},
+				onerror: function onerror(event) {
+					console.log(event);
+				},
+				ontimeout: function ontimeout(event) {
+					console.log(event);
+				}
+			};
+
+			var url = "/projects/getIndividualProject/" + project.id;
+
+			axios.get(url, requestProjectConfig).then(function (response) {
+				// this.projectData = response.data;
+				console.log(response);
+				console.log(requestProjectConfig);
 			});
 		},
 		addProject: function addProject(project) {
-			var _this2 = this;
+			var _this = this;
 
-			// console.log(project);
-			// this.messages.push(message);
-			var config = {
+			/*console.log(project);
+   this.messages.push(message);*/
+			var addProjectConfig = {
 				onUploadProgress: function onUploadProgress(progressEvent) {
 					var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
 					console.log(percentCompleted);
 				}
 			};
 
-			axios.post('/projects/addProject', project, config).then(function (response) {
+			axios.post('/projects/addProject', project, addProjectConfig).then(function (response) {
 				/*console.log(response.data);*/
-				_this2.myProjects = response.data;
-				/*console.log(this.myProjects);*/
+				/*this.myProjects = response.data;*/
+				_this.myProjects.push(response.data);
 			});
 		}
 	},
 	created: function created() {
-		var _this3 = this;
+		var _this2 = this;
 
 		console.log("Root Component Created.");
 
 		axios.get('/projects/getMyProjects').then(function (response) {
 			// console.log(response);
-			_this3.myProjects = response.data;
+			_this2.myProjects = response.data;
 		});
 		axios.get('/projects/getOtherProjects').then(function (response) {
 			// console.log(response);
@@ -2123,7 +2136,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	mounted: function mounted() {
-		console.log('Add Project Component mounted.');
+		/*console.log('Add Project Component mounted.');*/
 	},
 
 	methods: {
@@ -2252,7 +2265,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     mounted: function mounted() {
-        console.log('My Projects Component mounted.');
+        // console.log('My Projects Component mounted.');
         // console.log('With: ');
         // console.log(this.projects);
     }
@@ -2280,7 +2293,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
-        props: ['projects'], console.log('Other Projects Component mounted.');
+        props: ['projects'];
+        /*console.log('Other Projects Component mounted.');*/
     }
 });
 
@@ -2309,7 +2323,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             e.preventDefault();
             var id = e.target.id;
 
-            // console.log('From Project Component = '+ id);
+            /*console.log('From Project Component = '+ id);*/
 
             this.$emit("projectrequest", {
                 id: id
@@ -2317,7 +2331,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     mounted: function mounted() {
-        console.log('Project Component mounted.');
+        /*console.log('Project Component mounted.');*/
     }
 });
 
@@ -2498,7 +2512,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['tasks'],
     mounted: function mounted() {
-        console.log('Project Detail Component mounted.');
+        /*console.log('Project Detail Component mounted.');*/
     }
 });
 
@@ -2529,9 +2543,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['task'],
     mounted: function mounted() {
-        console.log('Task Component mounted.');
+        /*console.log('Task Component mounted.');
         console.log('With: ');
-        console.log(this.task);
+        console.log(this.task);*/
     },
 
     computed: {
@@ -2558,7 +2572,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['tasks'],
 
     mounted: function mounted() {
-        console.log('Task List Component mounted.');
+        /*console.log('Task List Component mounted.');*/
     }
 });
 
@@ -32564,7 +32578,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\AddProjectForm.vue"
+Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/AddProjectForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] AddProjectForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32598,7 +32612,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\Example.vue"
+Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32632,7 +32646,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\MyProjects.vue"
+Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/MyProjects.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] MyProjects.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32666,7 +32680,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\OtherProjects.vue"
+Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/OtherProjects.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] OtherProjects.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32700,7 +32714,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\Project.vue"
+Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/Project.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Project.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32734,7 +32748,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\ProjectDetail.vue"
+Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/ProjectDetail.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ProjectDetail.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32772,7 +32786,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\Task.vue"
+Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/Task.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Task.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32806,7 +32820,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\TaskList.vue"
+Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/TaskList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TaskList.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -33656,7 +33670,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.loadProject
     }
-  }, [_c('span', [_vm._v(_vm._s(_vm.project.name))]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n        " + _vm._s(_vm.project.name) + "\n        "), _c('div', {
     staticClass: "pull-right",
     staticStyle: {
       "margin-right": "1rem"
