@@ -33,34 +33,7 @@ const app = new Vue({
 		otherProjects:[],
 		projectData: [],
 		tasks: []
-		/*tasks: [
-		{
-			name: "Main Task 1"
-		},
-		{
-			name: "Main Task 2",
-			children: [
-			{name: "Child Task 2.1"},
-			{
-				name: "Child Task 2.2",
-				children: [
-				{name: "Child Task 2.2.1"},
-				{name: "Child Task 2.2.2"}
-				]
-			}
-			]
-		},
-		{
-			name: "Main Task 3",
-			children: [
-			{name: "Child Task 3.1"},
-			{name: "Child Task 3.2"}
-			]
-		},
-		{
-			name: "Main Task 4"
-		}
-		]*/
+		
 
 	},
 	methods: {
@@ -79,9 +52,9 @@ const app = new Vue({
 				}
 			};
 
+
+
 			var url = "/projects/getIndividualProject/"+project.id;
-
-
 
 			axios.get(url, requestProjectConfig).then(response => {
 				// this.projectData = response.data;
@@ -110,9 +83,9 @@ const app = new Vue({
             	this.myProjects.push(response.data);
 
             	humane.log("New Project - "+response.data.name+" Added.", {
-					timeout: 10000,
-					clickToClose: true
-				});
+            		timeout: 10000,
+            		clickToClose: true
+            	});
             });
         }
     },

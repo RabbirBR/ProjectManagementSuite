@@ -32,6 +32,13 @@
             // console.log('My Projects Component mounted.');
             // console.log('With: ');
             // console.log(this.projects);
+        },
+        created(){
+            Vue.use(VueProgressBar, {
+                color: 'rgb(143, 255, 199)',
+                failedColor: 'red',
+                height: '2px'
+            })
         }
     }
 </script>

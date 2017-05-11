@@ -27,6 +27,7 @@
 </head>
 <body>
     <div id="app">
+        <vue-progress-bar></vue-progress-bar>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container-fluid">
                 <div class="navbar-header">
