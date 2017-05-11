@@ -26,30 +26,5 @@
 
 <h2>Login Information</h2>
 <p>The system uses the default authentication provided with Laravel</p>
-<h3>Default Credentials Provided:</h3>
-<table border="1px solid black">
-	<thead>
-		<tr>
-			<th>E-mail</th>
-			<th>Password</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>user1@test.com</td>
-			<td>secret</td>
-		</tr>
-		<tr>
-			<td>user2@test.com</td>
-			<td>secret</td>
-		</tr>
-		<tr>
-			<td>user3@test.com</td>
-			<td>secret</td>
-		</tr>
-		<tr>
-			<td>user4@test.com</td>
-			<td>secret</td>
-		</tr>
-	</tbody>
-</table>
+<h3>Default Credentials</h3>
+<p>Some default users are provided to the system. Check the <b>UsersTableSeeder.php</b> file in <b>database->seeds</b> folder.</p>
