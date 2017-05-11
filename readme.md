@@ -1,10 +1,10 @@
 <h1>Project Management Suite</h1>
 <p>
-	Meant as an excersize to learn One Page Application (no reloading after logging in).
+	Meant as an exercise to learn One Page Application (no reloading after logging in).
 </p>
 <p>
-	The system is built using the <a href="">Laravel Framework</a>. As mentioned above this is a project I'm
-	developing to learn one page application using Vue.Js along with Laravel.
+	The system is built using the <a href="https://laravel.com/">Laravel Framework</a>. As mentioned above this is a project I'm
+	developing to learn one page application using <a href="https://vuejs.org/">Vue.Js</a> along with Laravel.
 </p>
 
 <h2>Pre-Requisites</h2>
@@ -27,7 +27,7 @@
 <h2>Login Information</h2>
 <p>The system uses the default authentication provided with Laravel</p>
 <h3>Default Credentials Provided:</h3>
-<table width="100%" border="1px solid black">
+<table border="1px solid black">
 	<thead>
 		<tr>
 			<th>E-mail</th>
