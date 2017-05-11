@@ -1187,7 +1187,11 @@ var app = new Vue({
 			axios.get(url, requestProjectConfig).then(function (response) {
 				// this.projectData = response.data;
 				console.log(response);
-				console.log(requestProjectConfig);
+				// console.log(requestProjectConfig);
+				humane.log("Getting Project Data of " + project.id + " from database.", {
+					timeout: 4000,
+					clickToClose: true
+				});
 			});
 		},
 		addProject: function addProject(project) {
@@ -1203,9 +1207,14 @@ var app = new Vue({
 			};
 
 			axios.post('/projects/addProject', project, addProjectConfig).then(function (response) {
-				/*console.log(response.data);*/
-				/*this.myProjects = response.data;*/
+				/*console.log(response.data);
+    this.myProjects = response.data;*/
 				_this.myProjects.push(response.data);
+
+				humane.log("New Project - " + response.data.name + " Added.", {
+					timeout: 10000,
+					clickToClose: true
+				});
 			});
 		}
 	},

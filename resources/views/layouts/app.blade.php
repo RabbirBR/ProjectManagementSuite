@@ -15,7 +15,8 @@
     <!-- Font-Awesome -->
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Humane-js Notification CSS -->
-    <link href="/humane-js/theme/flatty.css" rel="stylesheet">
+    <!-- <link href="/humane-js/themes/flatty.css" rel="stylesheet"> -->
+    <link href="/humane-js/themes/flatty.css" rel="stylesheet">
 
     @yield('customStyles')
     <!-- Scripts -->
