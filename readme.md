@@ -34,20 +34,20 @@
 <p>Some default users are provided to the system. Check the <b>UsersTableSeeder.php</b> file in <b>database->seeds</b> folder.</p>
 
 <h2>Functionalities Currently Finished.</h2>
-<ol>
+<ul>
 	<li>Authentication - Using Laravel's default Authentication.</li>
 	<li>Dashboard.</li>
 	<li>Top Navigation Bar.</li>
 	<li>Add Projects (Still needs form validation).</li>
 	<li>Side Bar - My Projects.</li>
-</ol>
+</ul>
 
 <h2>Functionalities still Under Development.</h2>
-<ol>
+<ul>
 	<li>Load Project details when a project is cliked on from the sidebar.</li>
 	<li>Add Tasks to project.</li>
 	<li>Generate Gannt Chart using data in the system.</li>
-</ol>
+</ul>
 
 <h2>Libraries and Packages Used</h2>
 <ul>
