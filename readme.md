@@ -46,13 +46,15 @@
 <ol>
 	<li>
 		Load Project details when a project is cliked on from the sidebar.
+	</li>
+	<li>
 		<ul>
 			<li>Project Tasks.</li>
 			<li>Generate Gannt Chart for details provided.</li>
 			<li>Project Information and settings.</li>
 		</ul>
 	</li>
-	
+
 	<li>Add Tasks to project.</li>
 	<li>Generate Gannt Chart using data in the system.</li>
 </ol>
