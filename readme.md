@@ -1,11 +1,7 @@
 <h1>Project Management Suite</h1>
+<h2>Introduction</h2>
 <p>
-	I am building this entire project as an exercise to learn One Page Application (no reloading after logging in).
-</p>
-
-<p>
-	The system is being built using the <a href="https://laravel.com/">Laravel Framework</a>. As mentioned above, this is a project I'm
-	developing to learn one page application using <a href="https://vuejs.org/">Vue.Js</a> along with <strong>Laravel 5.4</strong>.
+	This is a project I'm developing to learn one page application using <a href="https://vuejs.org/">Vue.Js</a> along with <a href="https://laravel.com/">Laravel 5.4</a>.
 </p>
 
 <h2>Pre-Requisites</h2>
