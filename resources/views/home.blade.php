@@ -88,7 +88,7 @@
                                 --}}
                             </div>
                         </div>
-
+                        {{--
                         <div class="project-owner" id="collaborating_task">
                             <header>Other Projects:</header>
 
@@ -106,7 +106,8 @@
                                 --}}
                             </div>
                         </div>
-                    </div>                    
+                        --}}
+                    </div>
 
                     <div class="col-lg-10 col-md-9 col-sm-9 hidden-xs" style="padding: 0px; border-left: 1px solid #eee; min-height: 720px; overflow: auto;">
                         <div id="projectView">

@@ -32,8 +32,7 @@ const app = new Vue({
 		myProjects:[],
 		otherProjects:[],
 		projectData: [],
-		tasks: []
-		
+		tasks: []	
 
 	},
 	methods: {
@@ -60,19 +59,23 @@ const app = new Vue({
 				// this.projectData = response.data;
 				console.log(response);
 				// console.log(requestProjectConfig);
-				humane.log("Getting Project Data of " +project.id+ " from database.", {
-					timeout: 4000,
-					clickToClose: true
-				});
 			});
 		},
 		addProject(project) {
             /*console.log(project);
             this.messages.push(message);*/
+
+            var addProjectNanobar = new Nanobar({
+            	classname: 'nanobar',
+            	target: document.getElementById('main-loading-bar')
+            });
+
             var addProjectConfig = {
             	onUploadProgress: function(progressEvent) {
             		var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total );
             		console.log(percentCompleted);
+
+            		addProjectNanobar.go(percentCompleted);
             	}
             };
 
@@ -82,8 +85,8 @@ const app = new Vue({
             	this.myProjects = response.data;*/
             	this.myProjects.push(response.data);
 
-            	humane.log("New Project - "+response.data.name+" Added.", {
-            		timeout: 10000,
+            	humane.log(response.data.name+" Added.", {
+            		timeout: 5000,
             		clickToClose: true
             	});
             });
