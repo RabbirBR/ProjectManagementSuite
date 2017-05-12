@@ -60,7 +60,13 @@
 <h2>Libraries and Packages Used</h2>
 <ul>
 	<li>Default PHP and Node Packages provided with Laravel.</li>
-	<li><a href="https://jqueryui.com/">jQuery UI</a>.</li>
-	<li><a href="https://github.com/jacoborus/nanobar">Nanobar.js</a>.</li>
-	<li><a href="http://fontawesome.io/">Font Awesome 4.7.0</a></li>
+	<li><a href="https://jqueryui.com/">jQuery UI</a> - Using for the jQueryUI Datepicker.</li>
+	<li><a href="https://github.com/jacoborus/nanobar">Nanobar.js</a> - Using for the loading bar on the top of the page.</li>
+	<li><a href="https://github.com/wavded/humane-js">Humane.js</a> - Using for notifications to the user.</li>
+	<li><a href="http://fontawesome.io/">Font Awesome 4.7.0</a> - because, awesome icons, duh.</li>
 </ul>
+
+<h2>Credits</h2>
+<p>
+	I will add names along with references to the accounts of people who criticised and helped build this system in any way. As of now there aren't any.
+</p>

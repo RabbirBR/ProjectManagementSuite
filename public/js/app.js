@@ -1188,7 +1188,7 @@ var app = new Vue({
         _this.myProjects.push(response.data);
 
         humane.log(response.data.name + " Added.", {
-          timeout: 5000,
+          timeout: 2500,
           clickToClose: true
         });
       });
