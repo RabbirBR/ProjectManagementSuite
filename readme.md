@@ -1,7 +1,16 @@
 <h1>Project Management Suite</h1>
 <h2>Introduction</h2>
 <p>
-	This is a project I'm developing to learn one page application using <a href="https://vuejs.org/">Vue.Js</a> along with <a href="https://laravel.com/">Laravel 5.4</a>.
+	This is a simple One-page Application using <a href="https://vuejs.org/">Vue.Js</a> along with <a href="https://laravel.com/">Laravel 5.4</a>. This is a learning project I'm developing alone to build up my portfolio as a Web/Laravel Developer. I welcome any criticism to the system, since it will help me improve.
+</p>
+<p>
+	The system will allow a user to:
+	<ul>
+		<li>Register and Login to the system.</li>
+		<li>Create Project.</li>
+		<li>Add tasks to each Project and assign a time (in hours) to each tasks.</li>
+		<li>See a <b>Gannt Chart</b>, which the system will generate from the data the user provides.</li>
+	</ul>
 </p>
 
 <h2>Pre-Requisites</h2>
@@ -12,29 +21,32 @@
 	<li>Mysql Server. Alternatively you can also install one of the local servers (Eg. XAMMP, WAMP, LAMP, MAMP, etc.).</li>
 </ul>
 
-<h2>Instructions for starting the App</h2>
+<h2>Instructions for starting the Application</h2>
 <ol>
-	<li>Download from repository or clone, then extract(if you downloaded).</li>
+	<li>Download from repository or clone.</li>
 	<li>Open CLI or terminal on the project folder.</li>
-	<li>On the terminal run '<b>npm install</b>' and '<b>composer update</b>' in any order to install all PHP and Node dependencies.</li>
+	<li>On the terminal run '<b>npm install</b>' and '<b>composer update</b>' in any order (or together, it doesn't matter) to install all PHP and Node dependencies.</li>
 	<li>Create a new database for using in this project.</li>
 	<li>Copy '<b>.env.example</b>' and rename the new file '<b>.env</b>'.</li>
-	<li>Change the DB fields in '.env' according to your needs.</li>
+	<li>Change the DB fields in '.env' according to your MySql Server Configuration.</li>
 	<li>Run command '<b>php artisan migrate --seed</b>' to migrate and seed database (If you get an error here you probably didn't add the proper details to the fields to the DB fields in .env).</li>
 	<li>Run command '<b>php artisan serve</b>'.</li>
 </ol>
 
-<h2>Login Information</h2>
-<p>The system uses the default authentication provided with Laravel</p>
-<h3>Default Credentials</h3>
-<p>Some default users are provided to the system. Check the <b>UsersTableSeeder.php</b> file in <b>database->seeds</b> folder.</p>
+<h2>Example Data Provided.</h2>
+<ul>
+	<li>Some default users are provided with the system. Check the <b>UsersTableSeeder.php</b> file in <b>database->seeds</b> folder.</li>
+</ul>
+<p>
+	In later Versions of the development process, some default Projects and relevant data will be provided with the system as an example, after the respective functionalities have been completed.
+</p>
 
 <h2>Functionalities Currently Finished.</h2>
 <ul>
 	<li>Authentication - Using Laravel's default Authentication.</li>
 	<li>Dashboard.</li>
 	<li>Top Navigation Bar.</li>
-	<li>Add Projects (Still needs form validation).</li>
+	<li>Add Projects (Still needs Form Validation).</li>
 	<li>Side Bar - My Projects.</li>
 </ul>
 

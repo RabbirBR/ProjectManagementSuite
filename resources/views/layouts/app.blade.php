@@ -67,7 +67,7 @@
                         <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
                         <li><a href="{{ url('/profile') }}">Profile</a></li>
-                        <li><a href="{{ url('/colleagues') }}">Colleagues</a></li>
+                        <!-- <li><a href="{{ url('/colleagues') }}">Colleagues</a></li> -->
                         <li>
                             <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 Logout

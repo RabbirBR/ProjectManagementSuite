@@ -5,6 +5,7 @@
                 <a href="#" class="viewBtn btn btn-sm btn-primary active" id="taskList">
                     <i class="fa fa-lg fa-list" aria-hidden="true"></i> <span class="hidden-sm hidden-xs"> Task List</span>
                 </a>
+                <!--
                 <a href="#" class="viewBtn btn btn-sm btn-primary" id="yourTask">
                     <i class="fa fa-lg fa-star" aria-hidden="true"></i> <span class="hidden-sm hidden-xs"> Your Tasks</span>
                 </a>
@@ -14,10 +15,11 @@
                 <a href="#" class="viewBtn btn btn-sm btn-primary" id="projectFiles">
                     <i class="fa fa-folder-open" aria-hidden="true"></i> <span class="hidden-sm hidden-xs"> Files</span>
                 </a>
+                -->
                 <a href="#" class="viewBtn btn btn-sm btn-primary" id="gantt">
                     <i class="fa fa-lg fa-tasks" aria-hidden="true"></i> <span class="hidden-sm hidden-xs"> Gantt Chart</span>
                 </a>
-                <a href="#" class="viewBtn btn btn-sm btn-primary" id="settings">
+                <a href="#" class="viewBtn btn btn-sm btn-primary" id="projectInfo">
                     <i class="fa fa-lg fa-book" aria-hidden="true"></i> <span class="hidden-sm hidden-xs"> Project Info</span>
                 </a>
             </div>
@@ -41,7 +43,8 @@
                     </div>
                 </div>                
             </div>
-
+            
+            <!--
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 projectView" style="display:none;" id='yourTaskView'>
                 <h4 class="page-header" style="margin-top: 30px">Your Tasks</h4>
             </div>
@@ -64,12 +67,13 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 projectView" style="display:none;" id='projectFilesView'>
                 <h4 class="page-header" style="margin-top: 30px">Files</h4>
             </div>
+            -->
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 projectView" style="display:none;" id='ganttView'>
                 <h4 class="page-header" style="margin-top: 30px">Gantt Chart</h4>
             </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 projectView" style="display:none;" id='settingsView'>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 projectView" style="display:none;" id='projectInfoView'>
                 <h4 class="page-header" style="margin-top: 30px">Project Information</h4>
 
                 <div class="row">

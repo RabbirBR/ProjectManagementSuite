@@ -2493,6 +2493,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['tasks'],
@@ -32859,7 +32863,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "tasks": _vm.tasks
     }
-  })], 1)])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6)]), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8)])
+  })], 1)])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('header', {
     staticStyle: {
@@ -32891,45 +32895,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "viewBtn btn btn-sm btn-primary",
     attrs: {
       "href": "#",
-      "id": "yourTask"
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-lg fa-star",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c('span', {
-    staticClass: "hidden-sm hidden-xs"
-  }, [_vm._v(" Your Tasks")])]), _vm._v(" "), _c('a', {
-    staticClass: "viewBtn btn btn-sm btn-primary",
-    attrs: {
-      "href": "#",
-      "id": "members"
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-lg fa-users",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c('span', {
-    staticClass: "hidden-sm hidden-xs"
-  }, [_vm._v(" Members")])]), _vm._v(" "), _c('a', {
-    staticClass: "viewBtn btn btn-sm btn-primary",
-    attrs: {
-      "href": "#",
-      "id": "projectFiles"
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-folder-open",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c('span', {
-    staticClass: "hidden-sm hidden-xs"
-  }, [_vm._v(" Files")])]), _vm._v(" "), _c('a', {
-    staticClass: "viewBtn btn btn-sm btn-primary",
-    attrs: {
-      "href": "#",
       "id": "gantt"
     }
   }, [_c('i', {
@@ -32943,7 +32908,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "viewBtn btn btn-sm btn-primary",
     attrs: {
       "href": "#",
-      "id": "settings"
+      "id": "projectInfo"
     }
   }, [_c('i', {
     staticClass: "fa fa-lg fa-book",
@@ -32981,75 +32946,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "display": "none"
     },
     attrs: {
-      "id": "yourTaskView"
-    }
-  }, [_c('h4', {
-    staticClass: "page-header",
-    staticStyle: {
-      "margin-top": "30px"
-    }
-  }, [_vm._v("Your Tasks")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-lg-12 col-md-12 col-sm-12 col-xs-12 projectView",
-    staticStyle: {
-      "display": "none"
-    },
-    attrs: {
-      "id": "membersView"
-    }
-  }, [_c('h4', {
-    staticClass: "page-header",
-    staticStyle: {
-      "margin-top": "30px"
-    }
-  }, [_vm._v("Members")]), _vm._v(" "), _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "pull-right"
-  }, [_c('button', {
-    staticClass: "btn btn-sm btn-primary",
-    staticStyle: {
-      "margin-bottom": "8px"
-    },
-    attrs: {
-      "type": "button",
-      "data-toggle": "modal",
-      "data-target": "#addMember"
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-user",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" Add Member\n                    ")])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-lg-12 col-md-12 col-sm-12 col-xs-12",
-    attrs: {
-      "id": "memberList"
-    }
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-lg-12 col-md-12 col-sm-12 col-xs-12 projectView",
-    staticStyle: {
-      "display": "none"
-    },
-    attrs: {
-      "id": "projectFilesView"
-    }
-  }, [_c('h4', {
-    staticClass: "page-header",
-    staticStyle: {
-      "margin-top": "30px"
-    }
-  }, [_vm._v("Files")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-lg-12 col-md-12 col-sm-12 col-xs-12 projectView",
-    staticStyle: {
-      "display": "none"
-    },
-    attrs: {
       "id": "ganttView"
     }
   }, [_c('h4', {
@@ -33065,7 +32961,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "display": "none"
     },
     attrs: {
-      "id": "settingsView"
+      "id": "projectInfoView"
     }
   }, [_c('h4', {
     staticClass: "page-header",

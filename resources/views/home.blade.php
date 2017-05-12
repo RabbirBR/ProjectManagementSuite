@@ -94,7 +94,7 @@
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0px; border-radius: 0px" id="otherProjects">
                                 <other-projects :projects="otherProjects"></other-projects>
-                                {{--
+                                
                                 <div class="list-group" style="margin-bottom: 0px">
                                     <a href="#" class="projectListItem list-group-item">
                                         Project - 1
@@ -102,8 +102,7 @@
                                     <a href="#" class="projectListItem list-group-item">
                                         Project - 2
                                     </a>
-                                </div> 
-                                --}}
+                                </div>
                             </div>
                         </div>
                         --}}
