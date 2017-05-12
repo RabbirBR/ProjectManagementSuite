@@ -1130,80 +1130,84 @@ Vue.component('task-list', __webpack_require__(53));
 Vue.component('task', __webpack_require__(52));
 
 var app = new Vue({
-	el: '#app',
-	data: {
-		myProjects: [],
-		otherProjects: [],
-		projectData: [],
-		tasks: []
+  el: '#app',
+  data: {
+    myProjects: [],
+    otherProjects: [],
+    projectData: [],
+    tasks: []
 
-	},
-	methods: {
-		requestProject: function requestProject(project) {
-			// console.log("From Root = "+project.id);
-			var requestProjectConfig = {
-				onprogress: function onprogress(progressEvent) {
-					var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
-					console.log(percentCompleted);
-				},
-				onerror: function onerror(event) {
-					console.log(event);
-				},
-				ontimeout: function ontimeout(event) {
-					console.log(event);
-				}
-			};
+  },
+  methods: {
+    requestProject: function requestProject(project) {
+      // console.log("From Root = "+project.id);
+      var requestProjectConfig = {
+        onprogress: function onprogress(progressEvent) {
+          var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
+          console.log(percentCompleted);
+        },
+        onerror: function onerror(event) {
+          console.log(event);
+        },
+        ontimeout: function ontimeout(event) {
+          console.log(event);
+        }
+      };
 
-			var url = "/projects/getIndividualProject/" + project.id;
+      var url = "/projects/getIndividualProject/" + project.id;
 
-			axios.get(url, requestProjectConfig).then(function (response) {
-				// this.projectData = response.data;
-				console.log(response);
-				// console.log(requestProjectConfig);
-				humane.log("Getting Project Data of " + project.id + " from database.", {
-					timeout: 4000,
-					clickToClose: true
-				});
-			});
-		},
-		addProject: function addProject(project) {
-			var _this = this;
+      axios.get(url, requestProjectConfig).then(function (response) {
+        // this.projectData = response.data;
+        console.log(response);
+        // console.log(requestProjectConfig);
+      });
+    },
+    addProject: function addProject(project) {
+      var _this = this;
 
-			/*console.log(project);
-   this.messages.push(message);*/
-			var addProjectConfig = {
-				onUploadProgress: function onUploadProgress(progressEvent) {
-					var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
-					console.log(percentCompleted);
-				}
-			};
+      /*console.log(project);
+      this.messages.push(message);*/
 
-			axios.post('/projects/addProject', project, addProjectConfig).then(function (response) {
-				/*console.log(response.data);
-    this.myProjects = response.data;*/
-				_this.myProjects.push(response.data);
+      var addProjectNanobar = new Nanobar({
+        classname: 'nanobar',
+        target: document.getElementById('main-loading-bar')
+      });
 
-				humane.log("New Project - " + response.data.name + " Added.", {
-					timeout: 10000,
-					clickToClose: true
-				});
-			});
-		}
-	},
-	created: function created() {
-		var _this2 = this;
+      var addProjectConfig = {
+        onUploadProgress: function onUploadProgress(progressEvent) {
+          var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
+          console.log(percentCompleted);
 
-		console.log("Root Component Created.");
+          addProjectNanobar.go(percentCompleted);
+        }
+      };
 
-		axios.get('/projects/getMyProjects').then(function (response) {
-			// console.log(response);
-			_this2.myProjects = response.data;
-		});
-		axios.get('/projects/getOtherProjects').then(function (response) {
-			// console.log(response);
-			// this.otherProjects = response.data;
-		});
-	}
+      axios.post('/projects/addProject', project, addProjectConfig).then(function (response) {
+        /*console.log(response.data);
+        this.myProjects = response.data;*/
+        _this.myProjects.push(response.data);
+
+        humane.log(response.data.name + " Added.", {
+          timeout: 5000,
+          clickToClose: true
+        });
+      });
+    }
+  },
+  created: function created() {
+    var _this2 = this;
+
+    console.log("Root Component Created.");
+
+    axios.get('/projects/getMyProjects').then(function (response) {
+      // console.log(response);
+      _this2.myProjects = response.data;
+    });
+    axios.get('/projects/getOtherProjects').then(function (response) {
+      // console.log(response);
+      // this.otherProjects = response.data;
+    });
+  }
 });
 
 /***/ }),
@@ -2249,13 +2253,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // console.log('My Projects Component mounted.');
         // console.log('With: ');
         // console.log(this.projects);
-    },
-    created: function created() {
-        Vue.use(VueProgressBar, {
-            color: 'rgb(143, 255, 199)',
-            failedColor: 'red',
-            height: '2px'
-        });
     }
 });
 

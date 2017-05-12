@@ -15,10 +15,17 @@
     <!-- Font-Awesome -->
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Humane-js Notification CSS -->
-    <!-- <link href="/humane-js/themes/flatty.css" rel="stylesheet"> -->
+    <!-- <link href="/humane-js/themes/libnotify.css" rel="stylesheet"> -->
     <link href="/humane-js/themes/flatty.css" rel="stylesheet">
 
     @yield('customStyles')
+
+    <style type="text/css">
+        .nanobar{
+            height: 2px;            
+            margin: 0 auto;
+        }
+    </style>
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?>
@@ -27,8 +34,7 @@
 </head>
 <body>
     <div id="app">
-        <vue-progress-bar></vue-progress-bar>
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px;">
             <div class="container-fluid">
                 <div class="navbar-header">
 
@@ -70,38 +76,27 @@
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
-                        </li>
-                        {{-- <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li> --}}
-                    @endif
-                </ul>
+                        </li>                        
+                        @endif
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
 
-    @yield('content')
-</div>
+        </nav>
+        <div class="nanobar" id="main-loading-bar" style="margin-bottom: 22px"></div>
 
-<!-- Scripts -->
-<script src="/js/app.js"></script>
-<!-- Humane-js Notification JS -->
-<script src="/humane-js/humane.min.js"></script>
+        
 
-@yield('scripts')
+        @yield('content')
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/app.js"></script>
+    <!-- Humane-js Notification JS -->
+    <script src="/humane-js/humane.min.js"></script>
+    <!-- Nanobar-Progress Bar -->
+    <script src="/nanobar/nanobar.min.js"></script>
+
+    @yield('scripts')
 </body>
 </html>
