@@ -1176,8 +1176,7 @@ var app = new Vue({
       var addProjectConfig = {
         onUploadProgress: function onUploadProgress(progressEvent) {
           var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
-          console.log(percentCompleted);
-
+          // console.log(percentCompleted);
           addProjectNanobar.go(percentCompleted);
         }
       };
@@ -1188,7 +1187,12 @@ var app = new Vue({
         _this.myProjects.push(response.data);
 
         humane.log(response.data.name + " Added.", {
-          timeout: 2500,
+          timeout: 2000,
+          clickToClose: true
+        });
+      }).catch(function (err) {
+        humane.log("Something went wrong, please try again.", {
+          timeout: 2000,
           clickToClose: true
         });
       });

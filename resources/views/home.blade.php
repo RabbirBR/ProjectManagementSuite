@@ -50,7 +50,7 @@
 @endsection
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" style="display: flex;">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="panel panel-default">
@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12" style="padding: 0px;box-shadow: 2px 0px 2px #eee; height: 100%; overflow: none;">
+                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12" style="height: 100%; padding: 0px;box-shadow: 2px 0px 2px #eee; height: 100%; overflow: none;">
                         <div class="project-owner" id="created_task">
                             <header>
                                 Your Projects
