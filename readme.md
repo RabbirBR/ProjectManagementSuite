@@ -26,11 +26,13 @@
 	<li>Download from repository or clone.</li>
 	<li>Open CLI or terminal on the project folder.</li>
 	<li>On the terminal run '<b>npm install</b>' and '<b>composer update</b>' in any order (or together, it doesn't matter) to install all PHP and Node dependencies.</li>
-	<li>Create a new database for using in this project.</li>
+	<li>After 'npm install' command has finished, run the command 'npm run dev' or 'npm run watch' to compile the Vue components.</li>
+	<li>Create a new MySql database to use in this project.</li>
 	<li>Copy '<b>.env.example</b>' and rename the new file '<b>.env</b>'.</li>
 	<li>Change the DB fields in '.env' according to your MySql Server Configuration.</li>
 	<li>Run command '<b>php artisan migrate --seed</b>' to migrate and seed database (If you get an error here you probably didn't add the proper details to the fields to the DB fields in .env).</li>
-	<li>Run command '<b>php artisan serve</b>'.</li>
+	<li>Run command '<b>php artisan serve</b>', copy the development server address given to you(by default its localhost:8000 or 127.0.0.1:8000).</li>
+	<li>Go to your prefered browser and paste to start trying out the Application.</li>
 </ol>
 
 <h2>Example Data Provided.</h2>
