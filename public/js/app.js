@@ -32572,7 +32572,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/AddProjectForm.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\AddProjectForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] AddProjectForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32606,7 +32606,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/Example.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32640,7 +32640,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/MyProjects.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\MyProjects.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] MyProjects.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32674,7 +32674,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/OtherProjects.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\OtherProjects.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] OtherProjects.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32708,7 +32708,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/Project.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\Project.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Project.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32742,7 +32742,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/ProjectDetail.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\ProjectDetail.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ProjectDetail.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32780,7 +32780,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/Task.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\Task.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Task.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32814,7 +32814,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/TaskList.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\TaskList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TaskList.vue: functional components are not supported with templates, they should use render functions.")}
 
