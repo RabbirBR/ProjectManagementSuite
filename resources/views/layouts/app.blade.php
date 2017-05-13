@@ -15,8 +15,10 @@
     <!-- Font-Awesome -->
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Humane-js Notification CSS -->
-    <!-- <link href="/humane-js/themes/libnotify.css" rel="stylesheet"> -->
     <link href="/humane-js/themes/flatty.css" rel="stylesheet">
+    <!-- <link href="/humane-js/themes/libnotify.css" rel="stylesheet"> -->
+
+    
 
     @yield('customStyles')
 
@@ -96,7 +98,6 @@
     <script src="/humane-js/humane.min.js"></script>
     <!-- Nanobar-Progress Bar -->
     <script src="/nanobar/nanobar.min.js"></script>
-
     @yield('scripts')
 </body>
 </html>

@@ -25,12 +25,12 @@
             </div>
         </header>
 
-        <div>
+        <div id="mainContent"  style="position: relative; max-height: 600px; height: 100%;">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 projectView" id='taskListView'>
                 <h4 class="page-header" style="margin-top: 25px; margin-bottom: 15px;">Task List</h4>
 
                 <div class="row">
-                    <div class="pull-right"> 
+                    <div class="pull-right" style="margin-right: 10px;"> 
                         <button type="button" style="margin-bottom: 8px" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addTaskModal">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add Task
                         </button>

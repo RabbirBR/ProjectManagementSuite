@@ -1140,7 +1140,7 @@ var app = new Vue({
   },
   methods: {
     requestProject: function requestProject(project) {
-      // console.log("From Root = "+project.id);
+      /*console.log("From Root = "+project.id);*/
       var requestProjectConfig = {
         onprogress: function onprogress(progressEvent) {
           var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
@@ -1157,9 +1157,9 @@ var app = new Vue({
       var url = "/projects/getIndividualProject/" + project.id;
 
       axios.get(url, requestProjectConfig).then(function (response) {
-        // this.projectData = response.data;
+        /*this.projectData = response.data;*/
         console.log(response);
-        // console.log(requestProjectConfig);
+        /*console.log(requestProjectConfig);*/
       });
     },
     addProject: function addProject(project) {
@@ -1176,7 +1176,7 @@ var app = new Vue({
       var addProjectConfig = {
         onUploadProgress: function onUploadProgress(progressEvent) {
           var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
-          // console.log(percentCompleted);
+          /*console.log(percentCompleted);*/
           addProjectNanobar.go(percentCompleted);
         }
       };
@@ -32840,7 +32840,16 @@ module.exports = Component.exports
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "project-detail"
-  }, [_vm._m(0), _vm._v(" "), _c('div', [_c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "position": "relative",
+      "max-height": "600px",
+      "height": "100%"
+    },
+    attrs: {
+      "id": "mainContent"
+    }
+  }, [_c('div', {
     staticClass: "col-lg-12 col-md-12 col-sm-12 col-xs-12 projectView",
     attrs: {
       "id": "taskListView"
@@ -32926,7 +32935,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "pull-right"
+    staticClass: "pull-right",
+    staticStyle: {
+      "margin-right": "10px"
+    }
   }, [_c('button', {
     staticClass: "btn btn-sm btn-primary",
     staticStyle: {

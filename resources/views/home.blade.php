@@ -5,6 +5,9 @@
 <link href="/clockpicker-gh-pages/src/clockpicker.css" rel="stylesheet">
 
 <link href="/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+<!-- Perfect Scrollbar CSS -->
+<!-- <link href="/perfect-scrollbar/docs/perfect-scrollbar.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/css/perfect-scrollbar.min.css" />
 
 <style type="text/css">
     .row{
@@ -63,7 +66,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12" style="padding: 0px;box-shadow: 2px 0px 2px #eee; max-height: 800px; overflow: auto;">
+                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12" style="height: 100%; padding: 0px; box-shadow: 2px 0px 2px #eee; overflow: auto;">
                         <div class="project-owner" id="created_task">
                             <header>
                                 Your Projects
@@ -74,7 +77,7 @@
                                 </div>
                             </header>
 
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0px; border-radius: 0px" id="myProjects">
+                            <div id="sidebar" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="position: relative; max-height: 600px; padding: 0px; border-radius: 0px" id="myProjects">
                                 <my-projects v-on:projectrequest="requestProject" :projects="myProjects"></my-projects>
                                 {{-- 
                                 <div class="list-group" style="margin-bottom: 0px">
@@ -108,7 +111,7 @@
                         --}}
                     </div>
 
-                    <div class="col-lg-10 col-md-9 col-sm-9 hidden-xs" style="padding: 0px; border-left: 1px solid #eee; max-height: 800px; overflow: auto;">
+                    <div class="col-lg-10 col-md-9 col-sm-9 hidden-xs" style=" padding: 0px; border-left: 1px solid #eee; overflow: auto;">
                         <div id="projectView">
                             <project-detail :tasks="tasks"></project-detail>
                             {{-- @include('pages.projectDetails') --}}
@@ -191,6 +194,11 @@
 <script src="/jquery-ui/jquery-ui.min.js"></script>
 
 <script src="/clockpicker-gh-pages/src/clockpicker.js"></script>
+
+<!-- Perfect Scrollbar JS -->
+<!-- <script src="/perfect-scrollbar/docs/perfect-scrollbar.min.js"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/js/min/perfect-scrollbar.jquery.min.js"></script>
+
 <script type="text/javascript">
     var startDate = new Date();
 
@@ -204,6 +212,9 @@
         $(".pick_time").clockpicker({
             autoclose: true
         });
+
+        $('#sidebar').perfectScrollbar();
+        $('#mainContent').perfectScrollbar();
 
         reloadProjects();
         reloadOtherProjects();
