@@ -99,17 +99,17 @@
                                 <input type="hidden" name="project_id" value="">
                                 <div class="form-group">
                                     <label for="parent" style="text-align: right;" class="col-md-4 control-label">Parent Task</label>
-
+                    
                                     <div class="col-md-6">
                                         <select id="parentTasks" class="form-control input-sm" name="parent" value="">
                                             <option value="0">None</option>
                                         </select>
                                     </div>
                                 </div>
-
+                    
                                 <div class="form-group">
                                     <label for="name" style="text-align: right;" class="col-md-4 control-label">Task</label>
-
+                    
                                     <div class="col-md-6">
                                         <input id="name" type="text" class="form-control input-sm" name="name" value="">
                                     </div>
@@ -121,6 +121,7 @@
                             <button type="submit" class="btn btn-sm btn-primary">Add</button>
                         </div>
                     </form>
+                    -->
                 </div>
             </div>
         </div>

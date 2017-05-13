@@ -17,6 +17,7 @@ window.Vue = require('vue');
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('add-project', require('./components/AddProjectForm.vue'));
 
+
 Vue.component('my-projects', require('./components/MyProjects.vue'));
 Vue.component('other-projects', require('./components/OtherProjects.vue'));
 Vue.component('project', require('./components/Project.vue'));
