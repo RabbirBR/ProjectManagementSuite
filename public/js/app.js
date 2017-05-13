@@ -1186,7 +1186,7 @@ var app = new Vue({
         this.myProjects = response.data;*/
         _this.myProjects.push(response.data);
 
-        humane.log(response.data.name + " Added.", {
+        humane.log([response.data.name, "Added"], {
           timeout: 2000,
           clickToClose: true
         });

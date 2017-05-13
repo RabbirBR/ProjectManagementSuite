@@ -81,10 +81,10 @@ const app = new Vue({
             	this.myProjects = response.data;*/
             	this.myProjects.push(response.data);
 
-            	humane.log(response.data.name+" Added.", {
+            	humane.log([response.data.name, "Added"], {
             		timeout: 2000,
             		clickToClose: true
-            	});                
+            	});
             }).catch(function (err) {
               humane.log("Something went wrong, please try again.", {
                 timeout: 2000,
