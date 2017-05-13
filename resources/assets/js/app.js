@@ -37,7 +37,7 @@ const app = new Vue({
 	},
 	methods: {
 		requestProject(project){
-			// console.log("From Root = "+project.id);
+			/*console.log("From Root = "+project.id);*/
 			var requestProjectConfig = {
 				onprogress: function(progressEvent) {
 					var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total);
@@ -54,9 +54,9 @@ const app = new Vue({
 			var url = "/projects/getIndividualProject/"+project.id;
 
 			axios.get(url, requestProjectConfig).then(response => {
-				// this.projectData = response.data;
+				/*this.projectData = response.data;*/
 				console.log(response);
-				// console.log(requestProjectConfig);
+				/*console.log(requestProjectConfig);*/
 			});
 		},
 		addProject(project) {
@@ -71,7 +71,7 @@ const app = new Vue({
             var addProjectConfig = {
             	onUploadProgress: function(progressEvent) {
             		var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total );
-            		// console.log(percentCompleted);
+            		/*console.log(percentCompleted);*/
             		addProjectNanobar.go(percentCompleted);
             	}
             };
@@ -84,13 +84,13 @@ const app = new Vue({
             	humane.log(response.data.name+" Added.", {
             		timeout: 2000,
             		clickToClose: true
-            	});
+            	});                
             }).catch(function (err) {
               humane.log("Something went wrong, please try again.", {
-                    timeout: 2000,
-                    clickToClose: true
-                });
+                timeout: 2000,
+                clickToClose: true
             });
+          });
         }
     },
     created(){

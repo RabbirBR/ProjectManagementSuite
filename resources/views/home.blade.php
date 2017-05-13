@@ -50,7 +50,7 @@
 @endsection
 
 @section('content')
-<div class="container-fluid" style="display: flex;">
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="panel panel-default">
@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12" style="height: 100%; padding: 0px;box-shadow: 2px 0px 2px #eee; height: 100%; overflow: none;">
+                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12" style="padding: 0px;box-shadow: 2px 0px 2px #eee; max-height: 800px; overflow: auto;">
                         <div class="project-owner" id="created_task">
                             <header>
                                 Your Projects
@@ -108,7 +108,7 @@
                         --}}
                     </div>
 
-                    <div class="col-lg-10 col-md-9 col-sm-9 hidden-xs" style="padding: 0px; border-left: 1px solid #eee; min-height: 720px; overflow: auto;">
+                    <div class="col-lg-10 col-md-9 col-sm-9 hidden-xs" style="padding: 0px; border-left: 1px solid #eee; max-height: 800px; overflow: auto;">
                         <div id="projectView">
                             <project-detail :tasks="tasks"></project-detail>
                             {{-- @include('pages.projectDetails') --}}
