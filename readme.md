@@ -60,6 +60,7 @@
 	<li>Show Project Information & settings in Project Info tab when opened.</li>
 	<li>Allow to edit some data in the Project Information tab.</li>
 	<li>Need to make Responsive - to use in mobile/cell phone devices.</li>
+	<li>User Profile - Layout and Functionality</li>
 </ul>
 
 <h2>Libraries and Packages Used</h2>
