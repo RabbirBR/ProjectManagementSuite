@@ -18,7 +18,7 @@
 <ul>
 	<li><a href="https://getcomposer.org/">Composer</a>.</li>
 	<li><a href="https://nodejs.org/">Node.js and NPM</a>.</li>
-	<li>Mysql Server. Alternatively you can also install one of the local servers (Eg. XAMMP, WAMP, LAMP, MAMP, etc.).</li>
+	<li><a href="https://dev.mysql.com/downloads/mysql/">Mysql Server</a>. Alternatively you can also install one of the local servers (Eg. <a href="https://www.apachefriends.org">XAMMP</a>, <a href="http://www.wampserver.com/en/">WAMP</a>, <a href="https://www.mamp.info/en/">MAMP</a>, etc.).</li>
 </ul>
 
 <h2>Instructions for starting the Application</h2>
@@ -57,6 +57,7 @@
 	<li>Load Project details when a project is clicked on from the sidebar.</li>
 	<li>Add Tasks to project.</li>
 	<li>Generate Gannt Chart using data in the system.</li>
+	<li>Show Project Information & settings in Project Info tab when opened.</li>
 </ul>
 
 <h2>Libraries and Packages Used</h2>
