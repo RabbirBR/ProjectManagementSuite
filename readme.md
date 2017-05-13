@@ -37,7 +37,7 @@
 
 <h2>Example Data Provided.</h2>
 <ul>
-	<li>Some default users are provided with the system. Check the <b>UsersTableSeeder.php</b> file in <b>database->seeds</b> folder.</li>
+	<li>A default user has been provided with the system. Check the <b>UsersTableSeeder.php</b> file in <b>database->seeds</b> folder.</li>
 </ul>
 <p>
 	In later Versions of the development process, some default Projects and relevant data will be provided with the system as an example, after the respective functionalities have been completed.
