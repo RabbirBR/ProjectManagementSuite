@@ -113,7 +113,7 @@
 
                     <div class="col-lg-10 col-md-9 col-sm-9 hidden-xs" style=" padding: 0px; border-left: 1px solid #eee; overflow: auto;">
                         <div id="projectView">
-                            <project-detail :tasks="tasks"></project-detail>
+                            <project-detail :projectdata="projectData"></project-detail>
                             {{-- @include('pages.projectDetails') --}}
                         </div>
                     </div>
@@ -131,58 +131,6 @@
             </div>
 
             <add-project v-on:projectadded="addProject"></add-project>
-            <!-- <form class="form-horizontal" action="" method="POST">
-                {{ csrf_field() }}
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="name" style="text-align: right; margin-bottom: 0px" class="col-md-4 control-label">Project Name</label>
-            
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control input-sm" required name="name" value="">
-                            </div>
-                        </div>
-            
-                        <div class="form-group">
-                            <label for="start_date" style="text-align: right; margin-bottom: 0px" class="col-md-4 control-label">Start Date</label>
-            
-                            <div class="col-md-6">
-                                <input id="start_date" type="text" class="form-control input-sm" required name="start_date" value="">
-                            </div>
-                        </div>
-            
-                        <div class="form-group">
-                            <label for="start_date" style="text-align: right; margin-bottom: 0px" class="col-md-4 control-label">Weekly Work Days</label>
-            
-                            <div class="col-md-6" style="padding-left: 40px">
-                                <label class="checkbox"><input type="checkbox" name="sat" value="1">Saturday</label>
-                                <label class="checkbox"><input type="checkbox" name="sun" value="1">Sunday</label>
-                                <label class="checkbox"><input type="checkbox" name="mon" value="1">Monday</label>
-                                <label class="checkbox"><input type="checkbox" name="tue" value="1">Tuesday</label>
-                                <label class="checkbox"><input type="checkbox" name="wed" value="1">Wednesday</label>
-                                <label class="checkbox"><input type="checkbox" name="thu" value="1">Thursday</label>
-                                <label class="checkbox"><input type="checkbox" name="fri" value="1">Friday</label>
-                            </div>
-                        </div>
-            
-                        <div class="form-group">
-                            <label for="work_hours" style="text-align: right; margin-bottom: 0px" class="col-md-4 control-label">Daily work Hours</label>
-            
-                            <div class="col-md-6">
-                                <div class="input-group input-group-sm">
-                                    <input id="work_hours" type="text" class="form-control input-sm" required name="work_hours" placeholder="Work hours" value="8">
-                                    <span class="input-group-addon" id="basic-addon2">Hrs/Day</span>
-                                </div>
-                                {{-- <input id="work_hours" type="text" class="form-control input-sm" required name="work_hours" placeholder="Work hours" value=""> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-sm btn-primary">Add Project to Dashboard</button>
-                </div>
-            </form> -->
         </div>
     </div>
 </div>

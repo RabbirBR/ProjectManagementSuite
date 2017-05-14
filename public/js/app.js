@@ -1140,30 +1140,22 @@ var app = new Vue({
   },
   methods: {
     requestProject: function requestProject(project) {
+      var _this = this;
+
       /*console.log("From Root = "+project.id);*/
-      var requestProjectConfig = {
-        onprogress: function onprogress(progressEvent) {
-          var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
-          console.log(percentCompleted);
-        },
-        onerror: function onerror(event) {
-          console.log(event);
-        },
-        ontimeout: function ontimeout(event) {
-          console.log(event);
-        }
-      };
 
       var url = "/projects/getIndividualProject/" + project.id;
 
-      axios.get(url, requestProjectConfig).then(function (response) {
-        /*this.projectData = response.data;*/
-        console.log(response);
-        /*console.log(requestProjectConfig);*/
+      axios.get(url).then(function (response) {
+        _this.projectData = response.data;
+        // console.log(response);
+        console.log(response.request);
+
+        // console.log(requestProjectConfig);
       });
     },
     addProject: function addProject(project) {
-      var _this = this;
+      var _this2 = this;
 
       /*console.log(project);
       this.messages.push(message);*/
@@ -1184,7 +1176,7 @@ var app = new Vue({
       axios.post('/projects/addProject', project, addProjectConfig).then(function (response) {
         /*console.log(response.data);
         this.myProjects = response.data;*/
-        _this.myProjects.push(response.data);
+        _this2.myProjects.push(response.data);
 
         humane.log([response.data.name, "Added"], {
           timeout: 2000,
@@ -1199,13 +1191,13 @@ var app = new Vue({
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
 
     console.log("Root Component Created.");
 
     axios.get('/projects/getMyProjects').then(function (response) {
       // console.log(response);
-      _this2.myProjects = response.data;
+      _this3.myProjects = response.data;
     });
     axios.get('/projects/getOtherProjects').then(function (response) {
       // console.log(response);
@@ -2502,11 +2494,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['tasks'],
+    props: ['projectdata'],
     mounted: function mounted() {
-        /*console.log('Project Detail Component mounted.');*/
+        console.log(this.projectData);
     }
 });
 
@@ -32875,9 +32868,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('task-list', {
     attrs: {
-      "tasks": _vm.tasks
+      "projectdata": _vm.projectdata
     }
-  })], 1)])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5)])
+  }), _vm._v(" "), _c('task')], 1)])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('header', {
     staticStyle: {

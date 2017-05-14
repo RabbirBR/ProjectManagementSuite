@@ -39,7 +39,8 @@
                 <hr style="margin-bottom: 15px; margin-top: 15px;">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="taskList">
-                        <task-list :tasks="tasks"></task-list>
+                        <task-list :projectdata="projectdata"></task-list>
+                        <task></task>
                     </div>
                 </div>                
             </div>
@@ -172,9 +173,9 @@
 
 <script>
     export default {
-        props: ['tasks'],
+        props: ['projectdata'],
         mounted() {
-            /*console.log('Project Detail Component mounted.');*/
+            console.log(this.projectData);
         }
     }
 </script>

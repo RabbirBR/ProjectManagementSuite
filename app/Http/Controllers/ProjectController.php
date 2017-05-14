@@ -40,8 +40,11 @@ class ProjectController extends Controller
 
         if(isset($tasks)){
             foreach ($tasks as $i => $task) {
-                
+                if($task['has_children']){
+                    $this->getTasks($id, $child->id);
+                }                
             }
         }
+        return $tasks;
     }
 }

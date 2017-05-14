@@ -32,32 +32,23 @@ const app = new Vue({
 	data: {
 		myProjects:[],
 		otherProjects:[],
-		projectData: [],
+		projectData: [
+        ],
 		tasks: []	
 
 	},
 	methods: {
 		requestProject(project){
 			/*console.log("From Root = "+project.id);*/
-			var requestProjectConfig = {
-				onprogress: function(progressEvent) {
-					var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total);
-					console.log(percentCompleted);
-				},
-				onerror: function(event){
-					console.log(event);
-				},
-				ontimeout: function(event){
-					console.log(event);
-				}
-			};
 
 			var url = "/projects/getIndividualProject/"+project.id;
 
-			axios.get(url, requestProjectConfig).then(response => {
-				/*this.projectData = response.data;*/
-				console.log(response);
-				/*console.log(requestProjectConfig);*/
+			axios.get(url).then(response => {
+				this.projectData = response.data;
+				// console.log(response);
+                console.log(response.request);
+
+				// console.log(requestProjectConfig);
 			});
 		},
 		addProject(project) {
