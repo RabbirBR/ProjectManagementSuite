@@ -1130,80 +1130,80 @@ Vue.component('task-list', __webpack_require__(53));
 Vue.component('task', __webpack_require__(52));
 
 var app = new Vue({
-  el: '#app',
-  data: {
-    myProjects: [],
-    otherProjects: [],
-    projectData: [],
-    tasks: []
+    el: '#app',
+    data: {
+        myProjects: [],
+        otherProjects: [],
+        projectData: [],
+        tasks: []
 
-  },
-  methods: {
-    requestProject: function requestProject(project) {
-      var _this = this;
-
-      /*console.log("From Root = "+project.id);*/
-
-      var url = "/projects/getIndividualProject/" + project.id;
-
-      axios.get(url).then(function (response) {
-        _this.projectData = response.data;
-        // console.log(response);
-        console.log(response.request);
-
-        // console.log(requestProjectConfig);
-      });
     },
-    addProject: function addProject(project) {
-      var _this2 = this;
+    methods: {
+        requestProject: function requestProject(project) {
+            var _this = this;
 
-      /*console.log(project);
-      this.messages.push(message);*/
+            /*console.log("From Root = "+project.id);*/
 
-      var addProjectNanobar = new Nanobar({
-        classname: 'nanobar',
-        target: document.getElementById('main-loading-bar')
-      });
+            var url = "/projects/getIndividualProject/" + project.id;
 
-      var addProjectConfig = {
-        onUploadProgress: function onUploadProgress(progressEvent) {
-          var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
-          /*console.log(percentCompleted);*/
-          addProjectNanobar.go(percentCompleted);
+            axios.get(url).then(function (response) {
+                _this.projectData = response.data;
+                // console.log(response);
+                console.log(response.request);
+
+                // console.log(requestProjectConfig);
+            });
+        },
+        addProject: function addProject(project) {
+            var _this2 = this;
+
+            /*console.log(project);
+            this.messages.push(message);*/
+
+            var addProjectNanobar = new Nanobar({
+                classname: 'nanobar',
+                target: document.getElementById('main-loading-bar')
+            });
+
+            var addProjectConfig = {
+                onUploadProgress: function onUploadProgress(progressEvent) {
+                    var percentCompleted = Math.round(progressEvent.loaded * 100 / progressEvent.total);
+                    /*console.log(percentCompleted);*/
+                    addProjectNanobar.go(percentCompleted);
+                }
+            };
+
+            axios.post('/projects/addProject', project, addProjectConfig).then(function (response) {
+                /*console.log(response.data);
+                this.myProjects = response.data;*/
+                _this2.myProjects.push(response.data);
+
+                humane.log([response.data.name, "Added"], {
+                    timeout: 2000,
+                    clickToClose: true
+                });
+            }).catch(function (err) {
+                humane.log("Something went wrong, please try again.", {
+                    timeout: 2000,
+                    clickToClose: true
+                });
+            });
         }
-      };
+    },
+    created: function created() {
+        var _this3 = this;
 
-      axios.post('/projects/addProject', project, addProjectConfig).then(function (response) {
-        /*console.log(response.data);
-        this.myProjects = response.data;*/
-        _this2.myProjects.push(response.data);
+        console.log("Root Component Created.");
 
-        humane.log([response.data.name, "Added"], {
-          timeout: 2000,
-          clickToClose: true
+        axios.get('/projects/getMyProjects').then(function (response) {
+            // console.log(response);
+            _this3.myProjects = response.data;
         });
-      }).catch(function (err) {
-        humane.log("Something went wrong, please try again.", {
-          timeout: 2000,
-          clickToClose: true
+        axios.get('/projects/getOtherProjects').then(function (response) {
+            // console.log(response);
+            // this.otherProjects = response.data;
         });
-      });
     }
-  },
-  created: function created() {
-    var _this3 = this;
-
-    console.log("Root Component Created.");
-
-    axios.get('/projects/getMyProjects').then(function (response) {
-      // console.log(response);
-      _this3.myProjects = response.data;
-    });
-    axios.get('/projects/getOtherProjects').then(function (response) {
-      // console.log(response);
-      // this.otherProjects = response.data;
-    });
-  }
 });
 
 /***/ }),
@@ -2223,33 +2223,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['projects'],
 
     methods: {
         requestProject: function requestProject(project) {
-            // console.log('From My Projects = '+ project.id);
-
             this.$emit("projectrequest", {
                 id: project.id
             });
         }
     },
 
-    mounted: function mounted() {
-        // console.log('My Projects Component mounted.');
-        // console.log('With: ');
-        // console.log(this.projects);
-    }
+    mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2293,27 +2279,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['project'],
-    methods: {
-        loadProject: function loadProject(e) {
-            e.preventDefault();
-            var id = e.target.id;
-
-            /*console.log('From Project Component = '+ id);*/
-
-            this.$emit("projectrequest", {
-                id: id
-            });
-        }
-    },
-    mounted: function mounted() {
-        /*console.log('Project Component mounted.');*/
+  props: ['project'],
+  methods: {
+    loadProject: function loadProject(e) {
+      e.preventDefault();
+      var id = e.target.id;
+      this.$emit("projectrequest", {
+        id: id
+      });
     }
+  },
+  mounted: function mounted() {
+    /*console.log('Project Component mounted.');*/
+  }
 });
 
 /***/ }),
@@ -32565,7 +32545,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/AddProjectForm.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\AddProjectForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] AddProjectForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32599,7 +32579,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/Example.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32623,6 +32603,10 @@ module.exports = Component.exports
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+/* styles */
+__webpack_require__(78)
+
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(33),
@@ -32633,7 +32617,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/MyProjects.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\MyProjects.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] MyProjects.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32667,7 +32651,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/OtherProjects.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\OtherProjects.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] OtherProjects.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32691,6 +32675,10 @@ module.exports = Component.exports
 /* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+/* styles */
+__webpack_require__(76)
+
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(35),
@@ -32701,7 +32689,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/Project.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\Project.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Project.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32735,7 +32723,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/ProjectDetail.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\ProjectDetail.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ProjectDetail.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32773,7 +32761,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/Task.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\Task.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Task.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32807,7 +32795,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/rabbirbr/Projects/Laravel/Git/ProjectManagementSuite/resources/assets/js/components/TaskList.vue"
+Component.options.__file = "E:\\Git Projects\\ProjectManagementSuite\\resources\\assets\\js\\components\\TaskList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TaskList.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -33213,6 +33201,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, _vm._l((_vm.projects), function(project) {
     return _c('project', {
+      key: project.id,
       attrs: {
         "project": project
       },
@@ -33561,12 +33550,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.loadProject
     }
-  }, [_vm._v("\n        " + _vm._s(_vm.project.name) + "\n        "), _c('div', {
-    staticClass: "pull-right",
-    staticStyle: {
-      "margin-right": "1rem"
-    }
-  })])])
+  }, [_vm._v("\n    " + _vm._s(_vm.project.name) + "\n  ")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -43394,6 +43378,79 @@ module.exports = function(module) {
 __webpack_require__(11);
 module.exports = __webpack_require__(12);
 
+
+/***/ }),
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(8)();
+exports.push([module.i, "\n.project{\n  font-size: 12px;\n  cursor: pointer;\n}\n", ""]);
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(75);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(9)("0be9ec16", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-d7c5be8e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Project.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-d7c5be8e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Project.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(8)();
+exports.push([module.i, "\n.my-projects{\r\n    overflow-x: hide;\n}\r\n", ""]);
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(77);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(9)("1c920d31", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-34da5956\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MyProjects.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-34da5956\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MyProjects.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

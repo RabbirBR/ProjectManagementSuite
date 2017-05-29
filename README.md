@@ -40,15 +40,15 @@
 	<li>A Demo user is provided with the system. Check the <b>UsersTableSeeder.php</b> file in <b>database->seeds</b> folder.</li>
 </ul>
 <p>
-	In later Versions of the development process, some default Projects and relevant data will be provided with the system as an example, after the respective functionalities have been completed.
+	In later versions in the development process, some default Projects and relevant data will be provided with the system as example(s), after the respective functionalities have been completed.
 </p>
 
 <h2>Functionalities Currently Finished.</h2>
 <ul>
-	<li>Authentication - Using Laravel's default Authentication.</li>
+	<li>Authentication - Registration, Login, Logout, Password Recovery, etc.</li>
 	<li>Dashboard.</li>
 	<li>Top Navigation Bar.</li>
-	<li>Add Projects (Still needs Form Validation).</li>
+	<li>Add Projects(Still needs Form Validation).</li>
 	<li>Side Bar - My Projects.</li>
 </ul>
 
