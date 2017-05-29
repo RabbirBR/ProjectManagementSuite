@@ -18,7 +18,7 @@
 <ul>
 	<li><a href="https://getcomposer.org/">Composer</a>.</li>
 	<li><a href="https://nodejs.org/">Node.js and NPM</a>.</li>
-	<li>Mysql Server. Alternatively you can also install one of the local servers (Eg. XAMMP, WAMP, LAMP, MAMP, etc.).</li>
+	<li><a href="https://dev.mysql.com/downloads/mysql/">Mysql Server</a>. Alternatively you can also install one of the local servers (Eg. XAMMP, WAMP, LAMP, MAMP, etc.).</li>
 </ul>
 
 <h2>Instructions for starting the Application</h2>
@@ -37,7 +37,7 @@
 
 <h2>Example Data Provided.</h2>
 <ul>
-	<li>Some default users are provided with the system. Check the <b>UsersTableSeeder.php</b> file in <b>database->seeds</b> folder.</li>
+	<li>A Demo user is provided with the system. Check the <b>UsersTableSeeder.php</b> file in <b>database->seeds</b> folder.</li>
 </ul>
 <p>
 	In later Versions of the development process, some default Projects and relevant data will be provided with the system as an example, after the respective functionalities have been completed.
@@ -54,7 +54,7 @@
 
 <h2>Functionalities still Under Development.</h2>
 <ul>
-	<li>Load Project details when a project is cliked on from the sidebar.</li>
+	<li>Load Project details when a project is clicked on from the sidebar.</li>
 	<li>Add Tasks to project.</li>
 	<li>Generate Gannt Chart using data in the system.</li>
 </ul>
@@ -65,6 +65,7 @@
 	<li><a href="https://jqueryui.com/">jQuery UI</a> - As of now, only using the jQueryUI Datepicker.</li>
 	<li><a href="https://github.com/jacoborus/nanobar">Nanobar.js</a> - The loading bar on the top of the page.</li>
 	<li><a href="https://github.com/wavded/humane-js">Humane.js</a> - Notification popups on the top of the page to the user.</li>
+	<li><a href="https://github.com/noraesae/perfect-scrollbar">Perfect Scrollbar</a> - For customized scrollbars.</li>
 	<li><a href="http://fontawesome.io/">Font Awesome 4.7.0</a> - because, Awesome icons.</li>
 </ul>
 
