@@ -44,18 +44,17 @@ const app = new Vue({
 			var url = "/projects/getIndividualProject/"+project.id;
 
 			axios.get(url).then(response => {
-				this.projectData = response.data;
-				// console.log(response);
-                console.log(response.request);
+				this.projectData = response.data;				
+                console.log(response.data);
 
-				// console.log(requestProjectConfig);
+				
 			});
 		},
 		addProject(project) {
             /*console.log(project);
             this.messages.push(message);*/
 
-            var addProjectNanobar = new Nanobar({
+            var nanobar = new Nanobar({
             	classname: 'nanobar',
             	target: document.getElementById('main-loading-bar')
             });
@@ -64,7 +63,7 @@ const app = new Vue({
             	onUploadProgress: function(progressEvent) {
             		var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total );
             		/*console.log(percentCompleted);*/
-            		addProjectNanobar.go(percentCompleted);
+            		nanobar.go(percentCompleted);
             	}
             };
 

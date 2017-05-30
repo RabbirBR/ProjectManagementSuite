@@ -25,7 +25,7 @@
 </script>
 <style type="text/css">
   .project{
-    font-size: 12px;
+    font-size: 13px;
     cursor: pointer;
   }
 </style>
