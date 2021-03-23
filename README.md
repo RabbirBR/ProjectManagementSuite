@@ -65,7 +65,7 @@
 	<li><a href="https://jqueryui.com/">jQuery UI</a> - As of now, only using the jQueryUI Datepicker.</li>
 	<li><a href="https://github.com/jacoborus/nanobar">Nanobar.js</a> - The loading bar on the top of the page.</li>
 	<li><a href="https://github.com/wavded/humane-js">Humane.js</a> - Notification popups on the top of the page to the user.</li>
-	<li><a href="https://github.com/noraesae/perfect-scrollbar">Perfect Scrollbar</a> - For customized scrollbars.</li>
+	<li><a href="https://github.com/mdbootstrap/perfect-scrollbar">Perfect Scrollbar</a> - For customized scrollbars.</li>
 	<li><a href="http://fontawesome.io/">Font Awesome 4.7.0</a> - because, Awesome icons.</li>
 </ul>
 
